@@ -1,0 +1,33 @@
+<library path="ruka_gz">
+  <!-- <class name="ruka/RukaSystem"
+         type="ruka::RukaSystem"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      Robot hardware plugin for 6 dof robot tutorial.
+    </description>
+  </class>
+  <class name="ruka/RukaSensor"
+         type="ruka::RukaSensor"
+         base_class_type="hardware_interface::SensorInterface">
+    <description>
+      The ros2_control RRbot example using a system hardware interface-type.
+    </description>
+  </class> -->
+  
+  <class
+    name="ruka_gz/RukaSystem"
+    type="ruka_gz::RukaSystem"
+    base_class_type="hardware_interface::SystemInterface">
+    <description>
+      GazeboPositionJoint
+    </description>
+  </class>
+  <class
+     name="gz_ros2_control/GazeboSimSystem"
+     type="gz_ros2_control::GazeboSimSystem"
+     base_class_type="gz_ros2_control::GazeboSimSystemInterface">
+     <description>
+       GazeboPositionJoint
+     </description>
+   </class>
+</library>
