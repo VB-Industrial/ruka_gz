@@ -15,19 +15,19 @@
   </class> -->
   
   <class
-    name="ruka_gz/RukaSystem"
-    type="ruka_gz::RukaSystem"
+    name="gz_ros2_control/GazeboSimSyste"
+    type="gz_ros2_control::GazeboSimSyste"
     base_class_type="hardware_interface::SystemInterface">
     <description>
       GazeboPositionJoint
     </description>
   </class>
-  <class
+  <!-- <class
      name="gz_ros2_control/GazeboSimSystem"
      type="gz_ros2_control::GazeboSimSystem"
      base_class_type="gz_ros2_control::GazeboSimSystemInterface">
      <description>
        GazeboPositionJoint
      </description>
-   </class>
+   </class> -->
 </library>

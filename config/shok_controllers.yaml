@@ -2,13 +2,13 @@ controller_manager:
   ros__parameters:
     update_rate: 50 # Hz
 
-    ruka_gz_arm_controller:
+    joint_trajectory_controller:
       type: joint_trajectory_controller/JointTrajectoryController
       
     joint_state_broadcaster:
        type: joint_state_broadcaster/JointStateBroadcaster
 
-ruka_gz_arm_controller:
+joint_trajectory_controller:
   ros__parameters:
     joints:
       - base_link__link_01
@@ -19,7 +19,6 @@ ruka_gz_arm_controller:
       - link_05__link_06
     command_interfaces:
       - position
-      - velocity
     state_interfaces:
       - position
       - velocity

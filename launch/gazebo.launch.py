@@ -279,23 +279,21 @@ def generate_launch_description():
                    'ruka_gz', '-allow_renaming', 'true'],
     )
 # ///////////////////////////////
-    ros2_control_node = Node(
-        package="controller_manager",
-        executable="ros2_control_node",
-        parameters=[robot_controllers],
-        remappings=[
-            ("/controller_manager/robot_description", "/robot_description"),
-        ],
-        output="screen",
-    )
+    # ros2_control_node = Node(
+    #     package="controller_manager",
+    #     executable="ros2_control_node",
+    #     parameters=[robot_controllers],
+    #     remappings=[
+    #         ("/controller_manager/robot_description", "/robot_description"),
+    #     ],
+    #     output="screen",
+    # )
 
     joint_state_broadcaster_spawner = Node(
         package='controller_manager',
         executable='spawner',
         arguments=[
             "joint_state_broadcaster",
-            "--controller-manager",
-            "/controller_manager",
         ],
     )
     ruka_arm_controller_spawner = Node(
@@ -303,20 +301,32 @@ def generate_launch_description():
         executable='spawner',
         arguments=[
             'ruka_gz_arm_controller',
-             "-c", "/controller_manager",
+             "--param-file", robot_controllers,
+            ],
+    )
+
+    joint_trajectory_controller_spawner = Node(
+        package='controller_manager',
+        executable='spawner',
+        arguments=[
+            'joint_trajectory_controller',
+            '--param-file',
+            robot_controllers,
             ],
     )
 
     return LaunchDescription([
         # Launch gazebo environment
         # ros2_control_hardware_type,
+
+        node_robot_state_publisher,
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
                 [PathJoinSubstitution([FindPackageShare('ros_gz_sim'),
                                        'launch',
                                        'gz_sim.launch.py'])]),
             launch_arguments=[('gz_args', [' -r -v 4 empty.sdf'])]),
-        ros2_control_node,
+        # ros2_control_node,
         RegisterEventHandler(
             event_handler=OnProcessExit(
                 target_action=gz_spawn_entity,
@@ -326,10 +336,10 @@ def generate_launch_description():
         RegisterEventHandler(
             event_handler=OnProcessExit(
                 target_action=joint_state_broadcaster_spawner,
-                on_exit=[ruka_arm_controller_spawner],
+                on_exit=[joint_trajectory_controller_spawner],
             )
         ),
-        node_robot_state_publisher,
+        
         gz_spawn_entity,
         # Launch Arguments
         DeclareLaunchArgument(
