@@ -71,7 +71,9 @@ sudo apt-get install can-utils
 
 # PKG
 ~/ws_moveit/src
+
 git clone https://github.com/VB-Industrial/ruka_gz.git
+
 colcon build --packages-select ruka_gz
 
 # launch 
