@@ -11,17 +11,14 @@ endif()
 set(PACKAGE_INCLUDE_DEPENDS
    hardware_interface
   controller_interface
-  realtime_tools
  # semantic_components
   sensor_msgs
   pluginlib
   rclcpp
   rclcpp_lifecycle
-  moveit_ros_planning_interface
 )
 
 find_package(ament_cmake REQUIRED)
-find_package(moveit_ros_planning_interface REQUIRED)
 find_package(rclcpp REQUIRED)
 
 foreach(Dependency IN ITEMS ${PACKAGE_INCLUDE_DEPENDS})
