@@ -29,8 +29,6 @@ add_library(
   ruka_gz
   SHARED
   hardware/ruka_hardware.cpp
- 
- 
 )
 
 target_compile_features(ruka_gz PUBLIC cxx_std_17)
@@ -42,25 +40,18 @@ $<INSTALL_INTERFACE:include/ruka_gz>
 ament_target_dependencies(
   ruka_gz PUBLIC
   ${PACKAGE_INCLUDE_DEPENDS}
- 
 )
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE "RUKA_BUILDING_DLL")
 
-pluginlib_export_plugin_description_file(hardware_interface ruka_gz.xml)
-
-install(DIRECTORY launch DESTINATION share/${PROJECT_NAME}
-  PATTERN "setup_assistant.launch" EXCLUDE)
+install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY config DESTINATION share/${PROJECT_NAME})
-#install(FILES .setup_assistant DESTINATION share/${PROJECT_NAME})
 
 
 install(
   DIRECTORY hardware/include/
   DESTINATION include/ruka_gz
 )
-
-
 
 install(TARGETS ruka_gz
   EXPORT export_ruka_gz
