@@ -86,6 +86,8 @@ sudo apt-get install can-utils
 
 git clone https://github.com/VB-Industrial/ruka_gz.git
 
+cd ..
+
 colcon build --packages-select ruka_gz
 
 # launch 
