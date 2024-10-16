@@ -46,6 +46,7 @@ target_compile_definitions(${PROJECT_NAME} PRIVATE "RUKA_BUILDING_DLL")
 
 install(DIRECTORY launch DESTINATION share/${PROJECT_NAME})
 install(DIRECTORY config DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY world DESTINATION share/${PROJECT_NAME})
 
 
 install(
