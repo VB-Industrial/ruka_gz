@@ -78,4 +78,6 @@ colcon build --packages-select ruka_gz
 
 # launch 
 
-ros2 launch ruka_gz gazebo.launch.py
+ros2 launch ruka_gz q.launch.py
+
+ro2 param set /move_group use_sim_time true
