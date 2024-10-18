@@ -22,6 +22,13 @@ def generate_launch_description():
         default_value="moveit.rviz",
         description="RViz configuration file",
     )
+
+    sim_time = DeclareLaunchArgument(
+       "use_sim_time",
+        default_value= "True",
+        description="RViz configuration file",
+    )
+
     robot_description_content = Command(
         [
             PathJoinSubstitution([FindExecutable(name='xacro')]),
@@ -50,7 +57,7 @@ def generate_launch_description():
     )
 
 
-
+    move_group_path = os.path.join(get_package_share_directory(package_name), 'config', 'move_group.yaml')
 
     move_group_node = Node(
         package="moveit_ros_move_group",
@@ -58,14 +65,14 @@ def generate_launch_description():
         output="screen",
         parameters=[moveit_config.to_dict(),
                     # moveit_config.update,
-                    use_sim_time],
+                    move_group_path],
         arguments=["--ros-args", "--log-level", "info"],
     )
 
     # RViz
     rviz_base = LaunchConfiguration("rviz_config")
     rviz_config = PathJoinSubstitution(
-        [FindPackageShare("ruka"), "config", rviz_base]
+        [FindPackageShare("ruka_gz"), "config", rviz_base]
     )
 
     # rviz_config = PathJoinSubstitution(
@@ -84,7 +91,7 @@ def generate_launch_description():
             moveit_config.planning_pipelines,
             moveit_config.robot_description_kinematics,
             moveit_config.joint_limits,
-            #use_sim_time
+            move_group_path
         ],
 
     )
@@ -108,7 +115,8 @@ def generate_launch_description():
         package='robot_state_publisher',
         executable='robot_state_publisher',
         output='screen',
-        parameters=[robot_description]
+        parameters=[robot_description,
+                    move_group_path] #!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     )
 
     gz_spawn_entity = Node(
@@ -148,6 +156,9 @@ def generate_launch_description():
         ]
     )
 
+
+    
+
     world_sdf = os.path.join(get_package_share_directory('ruka_gz'), 'world', 'ruka_world.sdf')
 
     return LaunchDescription([
@@ -179,15 +190,30 @@ def generate_launch_description():
         ),        
         gz_spawn_entity,
         # Launch Arguments
+        # DeclareLaunchArgument(
+        #     name='use_sim_time',
+        #      value=True
+        #   ),
+
         DeclareLaunchArgument(
             'use_sim_time',
             default_value=use_sim_time,
             description='If true, use simulated clock'),
+
         RegisterEventHandler(
             event_handler=OnProcessExit(
                 target_action=gz_spawn_entity,
                 on_exit=[rviz_node],
             )
-        ),     
+        ),  
+
+        # RegisterEventHandler(
+        #     event_handler=OnProcessExit(
+        #         target_action=gz_spawn_entity,
+        #         on_exit=[sim_time],
+        #     )
+        # ),  
+
+      
     #    rviz_node
     ])

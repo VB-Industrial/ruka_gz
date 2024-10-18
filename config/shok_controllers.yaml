@@ -1,6 +1,7 @@
 controller_manager:
   ros__parameters:
     update_rate: 50 # Hz
+  #  use_sim_time: false
 
     ruka_arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
