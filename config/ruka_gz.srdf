@@ -37,17 +37,6 @@
         <joint name="link_04__link_05" value="0"/>
         <joint name="link_05__link_06" value="0"/>
     </group_state>
-
- 
-
-    <group_state name="start" group="ruka_arm_controller">
-        <joint name="base_link__link_01" value="0"/>
-        <joint name="link_01__link_02" value="-0.032"/>
-        <joint name="link_02__link_03" value="0.047"/>
-        <joint name="link_03__link_04" value="0"/>
-        <joint name="link_04__link_05" value="0"/>
-        <joint name="link_05__link_06" value="0"/>
-    </group_state>
    
 
     <group_state name="vertical" group="ruka_arm_controller">
@@ -68,13 +57,15 @@
         <joint name="link_05__link_06" value="0"/>
     </group_state>
 
-     <!-- <group_state name="close" group="ruka_hand_controller">
-        <joint name="link_hand_1__up_finger" value="0"/>
+     <group_state name="close" group="ruka_hand_controller">
+        <joint name="link_hand_cyl__second_fin" value="0.0"/>
+        <joint name="link_hand_cyl__first_fin" value="0.0"/> 
     </group_state>
     
     <group_state name="open" group="ruka_hand_controller">
-        <joint name="link_hand_1__up_finger" value="1.1"/>
-    </group_state> -->
+        <joint name="link_hand_cyl__second_fin" value="0.01"/>
+        <joint name="link_hand_cyl__first_fin" value="0.01"/> 
+    </group_state>
 
     <end_effector group="ruka_hand_controller" name="ruka_hand_controller" parent_group="ruka_arm_controller" parent_link="link_06"/>
 
