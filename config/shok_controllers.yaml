@@ -5,9 +5,12 @@ controller_manager:
 
     ruka_arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
-      
+   
     joint_state_broadcaster:
        type: joint_state_broadcaster/JointStateBroadcaster
+       
+    ruka_hand_controller:
+      type: joint_trajectory_controller/JointTrajectoryController
        
 ruka_arm_controller:
   ros__parameters:
@@ -23,4 +26,19 @@ ruka_arm_controller:
     state_interfaces:
       - position
       - velocity
+      
+ruka_hand_controller:
+  ros__parameters:
+    joints: 
+      -   link_hand_cyl__first_fin
+      -   link_hand_cyl__second_fin
+
+
+    command_interfaces:
+      - position
+    state_interfaces:
+      - position
+      - velocity
+      
+
       

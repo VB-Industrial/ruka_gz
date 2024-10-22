@@ -137,7 +137,7 @@ planner_configs:
   TrajOpt:
     type: geometric::TrajOpt
 
-ruka:
+ruka_arm_controller:
   planner_configs:
     - SBL
     - EST
