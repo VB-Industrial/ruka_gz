@@ -11,13 +11,6 @@
         <color rgba="1 0 0 1"/>
     </material>
 
-    <link name="world"/>
-    <joint name="ruka_joint_world" type="fixed">
-        <parent link="world"/>
-        <child link="base_link"/>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
-    </joint>
-
     <link name="base_link">
 
         <inertial>
@@ -41,7 +34,7 @@
             <cylinder radius="0.09" length="0.03" />
           </geometry>
           </collision>
- 
+
     </link>
 
     <joint name="base_link__link_01" type="revolute">
@@ -53,7 +46,7 @@
         <origin rpy="0 0 0" xyz="0 0 0.03"/>
         <parent link="base_link"/>
         <child link="link_01"/>
-        
+
     </joint>
 
     <link name="link_01">
@@ -71,7 +64,7 @@
                 <cylinder radius="0.047" length="0.032" />
             </geometry>
             <material name="white"/>
-                
+
         </visual>
 
         <collision>
@@ -84,19 +77,19 @@
         <visual>
             <origin rpy="0 0 0" xyz="-0.0365 0 0.085" />
             <geometry>
-                <box size ="0.173 0.148 0.106"/>  
+                <box size ="0.173 0.148 0.106"/>
             </geometry>
              <material name="white"/>
-            
+
         </visual>
 
         <collision>
            <origin rpy="0 0 0" xyz="-0.0365 0 0.085" />
             <geometry>
-                <box size ="0.173 0.148 0.106"/>  
+                <box size ="0.173 0.148 0.106"/>
             </geometry>
           </collision>
- 
+
     </link>
 
     <joint name="link_01__link_01_red" type="fixed">
@@ -109,23 +102,23 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0.088 0.1115" />
             <geometry>
-                <box size ="0.08 0.028 0.135"/>  
+                <box size ="0.08 0.028 0.135"/>
             </geometry>
             <material name="red"/>
-            
+
         </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="0 0.088 0.1115" />
             <geometry>
-                <box size ="0.08 0.028 0.135"/>  
+                <box size ="0.08 0.028 0.135"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 -0.088 0.1115" />
             <geometry>
-                <box size ="0.08 0.028 0.135"/>  
+                <box size ="0.08 0.028 0.135"/>
             </geometry>
             <material name="red"/>
 
@@ -134,14 +127,14 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 -0.088 0.1115" />
             <geometry>
-                <box size ="0.08 0.028 0.135"/>  
+                <box size ="0.08 0.028 0.135"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="1.57 0 0" xyz="0 -0.088 0.179" />
             <geometry>
-                <cylinder radius="0.04" length="0.028"/>  
+                <cylinder radius="0.04" length="0.028"/>
             </geometry>
             <material name="red"/>
 
@@ -150,14 +143,14 @@
         <collision>
            <origin rpy="1.57 0 0" xyz="0 -0.088 0.179" />
             <geometry>
-                <cylinder radius="0.04" length="0.028"/>  
+                <cylinder radius="0.04" length="0.028"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="1.57 0 0" xyz="0 0.088 0.179" />
             <geometry>
-                <cylinder radius="0.04" length="0.028"/>  
+                <cylinder radius="0.04" length="0.028"/>
             </geometry>
             <material name="red"/>
 
@@ -166,7 +159,7 @@
         <collision>
            <origin rpy="1.57 0 0" xyz="0 0.088 0.179" />
             <geometry>
-                <cylinder radius="0.04" length="0.028"/>  
+                <cylinder radius="0.04" length="0.028"/>
             </geometry>
           </collision>
     </link>
@@ -179,9 +172,9 @@
         <limit effort="1000.0" lower="-3.57" upper="0.05" velocity="0.5"/>
         <origin rpy="1.57 -1.57 0" xyz="0.01 0 0.179"/>   <!-- origin rpy="1.57 0 0"-->
         <parent link="link_01"/>
-    
+
         <child link="link_02"/>
-    </joint> 
+    </joint>
 
     <link name="link_02">
 
@@ -194,7 +187,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <cylinder radius="0.038" length="0.148"/>  
+                <cylinder radius="0.038" length="0.148"/>
             </geometry>
             <material name="white"/>
 
@@ -203,87 +196,87 @@
         <collision>
              <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <cylinder radius="0.038" length="0.148"/>  
+                <cylinder radius="0.038" length="0.148"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 0.06775 0" />
             <geometry>
-                <box size ="0.076 0.1355 0.116"/>  
+                <box size ="0.076 0.1355 0.116"/>
             </geometry>
             <material name="white"/>
-               
+
         </visual>
 
         <collision>
           <origin rpy="0 0 0" xyz="0 0.06775 0" />
             <geometry>
-                <box size ="0.076 0.1355 0.116"/>  
+                <box size ="0.076 0.1355 0.116"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 1.57 0" xyz="0 0.14 0.055" />
             <geometry>
-                <box size ="0.006 0.28 0.076"/>  
+                <box size ="0.006 0.28 0.076"/>
             </geometry>
             <material name="white"/>
-               
+
         </visual>
 
         <collision>
             <origin rpy="0 1.57 0" xyz="0 0.14 0.055" />
             <geometry>
-                <box size ="0.006 0.28 0.076"/>  
+                <box size ="0.006 0.28 0.076"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 1.57 0" xyz="0 0.14 -0.055" />
             <geometry>
-                <box size ="0.006 0.28 0.076"/>  
+                <box size ="0.006 0.28 0.076"/>
             </geometry>
             <material name="white"/>
-               
+
         </visual>
 
         <collision>
             <origin rpy="0 1.57 0" xyz="0 0.14 -0.055" />
             <geometry>
-                <box size ="0.006 0.28 0.076"/>  
+                <box size ="0.006 0.28 0.076"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 0.28 -0.055" />
             <geometry>
-                <cylinder radius="0.038" length="0.006"/>    
+                <cylinder radius="0.038" length="0.006"/>
             </geometry>
             <material name="white"/>
-               
+
         </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="0 0.28 -0.055" />
             <geometry>
-                <cylinder radius="0.038" length="0.006"/>    
+                <cylinder radius="0.038" length="0.006"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 0.28 0.055" />
             <geometry>
-                <cylinder radius="0.038" length="0.006"/>    
+                <cylinder radius="0.038" length="0.006"/>
             </geometry>
             <material name="white"/>
-               
+
         </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="0 0.28 0.055" />
             <geometry>
-                <cylinder radius="0.038" length="0.006"/>    
+                <cylinder radius="0.038" length="0.006"/>
             </geometry>
           </collision>
 
@@ -299,39 +292,39 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0.0705" />
             <geometry>
-                <box size ="0.076 0.198 0.025"/>  
+                <box size ="0.076 0.198 0.025"/>
             </geometry>
             <material name="red"/>
-            
+
         </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0.0705" />
             <geometry>
-                <box size ="0.076 0.198 0.025"/>  
+                <box size ="0.076 0.198 0.025"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 0 -0.0705" />
             <geometry>
-                <box size ="0.076 0.198 0.025"/>  
+                <box size ="0.076 0.198 0.025"/>
             </geometry>
             <material name="red"/>
-    
+
         </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="0 0 -0.0705" />
             <geometry>
-                <box size ="0.076 0.198 0.025"/>  
+                <box size ="0.076 0.198 0.025"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 -0.099 0.0705" />
             <geometry>
-                <cylinder radius="0.038" length="0.025"/>  
+                <cylinder radius="0.038" length="0.025"/>
             </geometry>
             <material name="red"/>
 
@@ -340,7 +333,7 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 -0.099 0.0705" />
             <geometry>
-                <cylinder radius="0.038" length="0.025"/>  
+                <cylinder radius="0.038" length="0.025"/>
             </geometry>
 
           </collision>
@@ -348,7 +341,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0.099 0.0705" />
             <geometry>
-                <cylinder radius="0.038" length="0.025"/>  
+                <cylinder radius="0.038" length="0.025"/>
             </geometry>
             <material name="red"/>
 
@@ -357,14 +350,14 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 0.099 0.0705" />
             <geometry>
-                <cylinder radius="0.038" length="0.025"/>  
+                <cylinder radius="0.038" length="0.025"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 -0.099 -0.0705" />
             <geometry>
-                <cylinder radius="0.038" length="0.025"/>  
+                <cylinder radius="0.038" length="0.025"/>
             </geometry>
             <material name="red"/>
 
@@ -373,14 +366,14 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 -0.099 -0.0705" />
             <geometry>
-                <cylinder radius="0.038" length="0.025"/>  
+                <cylinder radius="0.038" length="0.025"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 0.099 -0.0705" />
             <geometry>
-                <cylinder radius="0.038" length="0.025"/>  
+                <cylinder radius="0.038" length="0.025"/>
             </geometry>
             <material name="red"/>
 
@@ -389,7 +382,7 @@
         <collision>
              <origin rpy="0 0 0" xyz="0 0.099 -0.0705" />
             <geometry>
-                <cylinder radius="0.038" length="0.025"/>  
+                <cylinder radius="0.038" length="0.025"/>
             </geometry>
 
           </collision>
@@ -402,7 +395,7 @@
         <!-- <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="0.067" soft_upper_limit="5.178" /> -->
 
         <limit effort="1000.0" lower="-0.035" upper="5.23" velocity="0.5"/>
-        <origin rpy="0 0 0.0175" xyz="0 0.28 0"/> 
+        <origin rpy="0 0 0.0175" xyz="0 0.28 0"/>
         <!-- !!!!!!!!!!!!!!!!!!!!! /> -->
         <parent link="link_02"/>
         <child link="link_03"/>
@@ -433,16 +426,16 @@
         <visual>
             <origin rpy="0 0 0" xyz="0.04 0 0" />
             <geometry>
-                <box size ="0.120 0.090 0.08"/>  
+                <box size ="0.120 0.090 0.08"/>
             </geometry>
              <material name="white"/>
-        
-        </visual>  
+
+        </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="0.04 0 0" />
             <geometry>
-                <box size ="0.120 0.090 0.08"/>  
+                <box size ="0.120 0.090 0.08"/>
             </geometry>
           </collision>
 
@@ -460,32 +453,32 @@
        <visual>
             <origin rpy="0 0 0" xyz="0 0.05 0" />
             <geometry>
-                <box size ="0.120 0.020 0.08"/>  
+                <box size ="0.120 0.020 0.08"/>
             </geometry>
             <material name="red"/>
-            
+
         </visual>
 
         <collision>
            <origin rpy="0 0 0" xyz="0 0.05 0" />
             <geometry>
-                <box size ="0.120 0.020 0.08"/>  
+                <box size ="0.120 0.020 0.08"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 -0.05 0" />
             <geometry>
-                <box size ="0.120 0.020 0.08"/>  
+                <box size ="0.120 0.020 0.08"/>
             </geometry>
             <material name="red"/>
-            
+
         </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="0 -0.05 0" />
             <geometry>
-                <box size ="0.120 0.020 0.08"/>  
+                <box size ="0.120 0.020 0.08"/>
             </geometry>
           </collision>
 
@@ -516,7 +509,7 @@
             </geometry>
 
             <material name="white"/>
-        
+
         </visual>
 
         <collision>
@@ -530,23 +523,23 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0.135" />
             <geometry>
-                <box size ="0.06 0.078 0.088"/>  
+                <box size ="0.06 0.078 0.088"/>
             </geometry>
             <material name="white"/>
-            
+
         </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0.135" />
             <geometry>
-                <box size ="0.06 0.078 0.088"/>  
+                <box size ="0.06 0.078 0.088"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 0.042 0.181" />
             <geometry>
-                <box size ="0.06 0.006 0.18"/>  
+                <box size ="0.06 0.006 0.18"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -554,14 +547,14 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 0.042 0.181" />
             <geometry>
-                <box size ="0.06 0.006 0.18"/>  
+                <box size ="0.06 0.006 0.18"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 -0.042 0.181" />
             <geometry>
-                <box size ="0.06 0.006 0.18"/>  
+                <box size ="0.06 0.006 0.18"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -569,7 +562,7 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 -0.042 0.181" />
             <geometry>
-                <box size ="0.06 0.006 0.18"/>  
+                <box size ="0.06 0.006 0.18"/>
             </geometry>
           </collision>
 
@@ -595,7 +588,7 @@
             </geometry>
 
             <material name="white"/>
-        
+
         </visual>
 
         <collision>
@@ -618,32 +611,32 @@
        <visual>
             <origin rpy="0 1.57 0" xyz="0 0.055 0" />
             <geometry>
-                <box size ="0.18 0.020 0.06"/>  
+                <box size ="0.18 0.020 0.06"/>
             </geometry>
             <material name="red"/>
-            
+
         </visual>
 
         <collision>
             <origin rpy="0 1.57 0" xyz="0 0.055 0" />
             <geometry>
-                <box size ="0.18 0.020 0.06"/>  
+                <box size ="0.18 0.020 0.06"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 1.57 0" xyz="0 -0.055 0" />
             <geometry>
-                <box size ="0.18 0.020 0.06"/>  
+                <box size ="0.18 0.020 0.06"/>
             </geometry>
             <material name="red"/>
-            
+
         </visual>
 
         <collision>
             <origin rpy="0 1.57 0" xyz="0 -0.055 0" />
             <geometry>
-                <box size ="0.18 0.020 0.06"/>  
+                <box size ="0.18 0.020 0.06"/>
             </geometry>
           </collision>
 
@@ -716,7 +709,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0.0355" />
             <geometry>
-                <box size ="0.055 0.1 0.007"/>  
+                <box size ="0.055 0.1 0.007"/>
             </geometry>
             <material name="white"/>
         </visual>
@@ -724,43 +717,43 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0.0355" />
             <geometry>
-                <box size ="0.055 0.1 0.007"/>  
+                <box size ="0.055 0.1 0.007"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 0 -0.0355" />
             <geometry>
-                <box size ="0.055 0.1 0.007"/>  
+                <box size ="0.055 0.1 0.007"/>
             </geometry>
             <material name="white"/>
-            
+
         </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="0 0 -0.0355" />
             <geometry>
-                <box size ="0.055 0.1 0.007"/>  
+                <box size ="0.055 0.1 0.007"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0 -0.0465 0" />
             <geometry>
-                <box size ="0.055 0.007 0.078"/>  
+                <box size ="0.055 0.007 0.078"/>
             </geometry>
             <material name="white"/>
-            
+
         </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="0 -0.0465 0" />
             <geometry>
-                <box size ="0.055 0.007 0.078"/>  
+                <box size ="0.055 0.007 0.078"/>
             </geometry>
           </collision>
- 
-    </link> 
+
+    </link>
 
     <joint name="link_05__link_05_red" type="fixed">
         <origin rpy="0 0 0" xyz="0 0.05 0"/>
@@ -773,48 +766,48 @@
        <visual>
             <origin rpy="0 0 0" xyz="0 -0.00075 0" />
             <geometry>
-                <box size ="0.055 0.0015 0.078"/>  
+                <box size ="0.055 0.0015 0.078"/>
             </geometry>
             <material name="red"/>
-            
+
         </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="0 -0.00075 0" />
             <geometry>
-                <box size ="0.055 0.0015 0.078"/>  
+                <box size ="0.055 0.0015 0.078"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="0.02675 -0.05 0" />
             <geometry>
-                <box size ="0.0015 0.1 0.078"/>  
+                <box size ="0.0015 0.1 0.078"/>
             </geometry>
             <material name="red"/>
-            
+
         </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="0.02675 -0.05 0" />
             <geometry>
-                <box size ="0.0015 0.1 0.078"/>  
+                <box size ="0.0015 0.1 0.078"/>
             </geometry>
           </collision>
 
         <visual>
             <origin rpy="0 0 0" xyz="-0.02675 -0.05 0" />
             <geometry>
-                <box size ="0.0015 0.1 0.078"/>  
+                <box size ="0.0015 0.1 0.078"/>
             </geometry>
             <material name="red"/>
-            
+
         </visual>
 
         <collision>
             <origin rpy="0 0 0" xyz="-0.02675 -0.05 0" />
             <geometry>
-                <box size ="0.0015 0.1 0.078"/>  
+                <box size ="0.0015 0.1 0.078"/>
             </geometry>
           </collision>
 
@@ -860,7 +853,7 @@
                 <cylinder radius="0.024" length="0.005" />
             </geometry>
             <material name="white"/>
-            
+
         </visual>
 
         <collision>
