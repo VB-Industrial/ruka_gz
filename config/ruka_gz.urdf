@@ -866,4 +866,120 @@
     </link>
 
 
+
+
+
+
+ <!-- ////////////////////////////////////////////// -->
+
+    <joint name="link_06__link_hand_cyl" type="fixed">
+        <origin rpy="0 0 0" xyz="0 0 0"/>
+        <parent link="link_06"/>
+        <child link="link_hand_cyl"/>
+    </joint>
+
+    <link name="link_hand_cyl">
+
+         <inertial>
+            <mass value="0.01"/>
+            <origin rpy="0 0 0" xyz="0.0510509 0.009108 0.0106343"/>
+           <inertia ixx="0.00303336450376" ixy="-0.000437276865508" ixz="0.000629257294877" iyy="0.00404479911567" iyz="0.000130472021025" izz="0.00558234286039"/>
+        </inertial>
+
+
+        <visual>
+            <origin rpy="0 0 1.57" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find ruka_gz)/config/mesh/gripper4310.stl"/>
+            </geometry>
+            <material name="blue"/>
+        </visual>
+
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0.01" />
+            <geometry>
+                <cylinder radius="0.010" length="0.01" />
+            </geometry>
+
+          </collision>
+
+
+    </link>
+
+    <joint name="link_hand_cyl__first_fin" type="prismatic">
+        <parent link="link_hand_cyl" />
+        <child link="first_fin" />
+        <origin rpy="1.57 0 3.14" xyz="0 0.005 0.0642" />
+        <axis xyz="0 0 1" />
+        <limit effort="20" lower="0.0" upper="0.01" velocity="0.2" />
+    </joint>
+
+
+    <link name="first_fin">
+
+         <inertial>
+            <mass value="0.01"/>
+            <origin rpy="0 0 0" xyz="0.0510509 0.009108 0.0106343"/>
+           <inertia ixx="0.00303336450376" ixy="-0.000437276865508" ixz="0.000629257294877" iyy="0.00404479911567" iyz="0.000130472021025" izz="0.00558234286039"/>
+        </inertial>
+
+
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find ruka_gz)/config/mesh/finger50mm-S.stl"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="file://$(find ruka_gz)/config/mesh/finger50mm-S.stl" />
+            </geometry>
+        </collision>
+
+
+    </link>
+
+
+     <joint name="link_hand_cyl__second_fin" type="prismatic">
+        <parent link="link_hand_cyl" />
+        <child link="second_fin" />
+        <origin rpy="1.57 0 0" xyz="0 -0.005 0.0642" />
+        <axis xyz="0 0 1" />
+        <limit effort="20" lower="0.0" upper="0.01" velocity="0.2" />
+    </joint>
+
+
+    <link name="second_fin">
+
+         <inertial>
+            <mass value="0.01"/>
+            <origin rpy="0 0 0" xyz="0.0510509 0.009108 0.0106343"/>
+           <inertia ixx="0.00303336450376" ixy="-0.000437276865508" ixz="0.000629257294877" iyy="0.00404479911567" iyz="0.000130472021025" izz="0.00558234286039"/>
+        </inertial>
+
+
+        <visual>
+            <origin rpy="0 0 0" xyz="0 0 0"/>
+            <geometry>
+                <mesh filename="file://$(find ruka_gz)/config/mesh/finger50mm-S-1.stl"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+
+        <collision>
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <geometry>
+                <mesh filename="file://$(find ruka_gz)/config/mesh/finger50mm-S-1.stl" />
+            </geometry>
+        </collision>
+
+
+    </link>
+
+
+
+
 </robot>
