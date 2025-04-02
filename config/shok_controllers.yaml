@@ -32,8 +32,6 @@ ruka_hand_controller:
     joints: 
       -   link_hand_cyl__first_fin
       -   link_hand_cyl__second_fin
-
-
     command_interfaces:
       - position
     state_interfaces:

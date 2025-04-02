@@ -86,7 +86,7 @@
     <disable_collisions link1="second_fin" link2="link_05" reason="Never"/>
     <disable_collisions link1="second_fin" link2="link_05_red" reason="Never"/>
     <disable_collisions link1="second_fin" link2="link_06" reason="Never"/>
-    <disable_collisions link1="linsecond_fink_hand_cyl__second_fin" link2="link_hand_cyl" reason="Adjacent"/>
+    <!-- <disable_collisions link1="linsecond_fink_hand_cyl__second_fin" link2="link_hand_cyl" reason="Adjacent"/> -->
     <disable_collisions link1="second_fin" link2="first_fin" reason="Never"/>
 
     <disable_collisions link1="first_fin" link2="link_03" reason="Never"/>

@@ -907,10 +907,11 @@
         </visual>
 
         <collision>
-            <origin rpy="0 0 0" xyz="0 0 0.01" />
+           <origin rpy="0 0 1.57" xyz="0 0 0"/>
             <geometry>
-                <cylinder radius="0.010" length="0.01" />
+                <mesh filename="file://$(find ruka_gz)/config/mesh/gripper4310.stl"/>
             </geometry>
+            <!-- <material name="blue"/> -->
 
           </collision>
 
@@ -922,7 +923,7 @@
         <child link="first_fin" />
         <origin rpy="1.57 0 3.14" xyz="0 0.005 0.0642" />
         <axis xyz="0 0 1" />
-        <limit effort="20" lower="0.0" upper="0.01" velocity="0.2" />
+        <limit effort="20" lower="-0.00001" upper="0.01" velocity="0.2" />
     </joint> 
 
 
@@ -959,7 +960,7 @@
         <child link="second_fin" />
         <origin rpy="1.57 0 0" xyz="0 -0.005 0.0642" />
         <axis xyz="0 0 1" />
-        <limit effort="20" lower="0.0" upper="0.01" velocity="0.2" />
+        <limit effort="20" lower="-0.00001" upper="0.01" velocity="0.2" />
     </joint> 
 
 

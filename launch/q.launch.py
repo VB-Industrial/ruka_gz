@@ -50,7 +50,7 @@ def generate_launch_description():
         )
         .trajectory_execution(file_path="config/moveit_controllers.yaml")
         .planning_pipelines(
-            pipelines=["chomp", "pilz_industrial_motion_planner"]
+            pipelines=["chomp", "pilz_industrial_motion_planner", "ompl"]
         )
         # .moveit_config_dict.update({'use_sim_time' : True})
         .to_moveit_configs()
